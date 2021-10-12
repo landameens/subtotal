@@ -1,10 +1,12 @@
 {
   "name": "subtotal",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Тестовое задание на Frontend-разработчика(React)",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "cross-env NODE_ENV=development webpack --mode development",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "start": "cross-env NODE_ENV=development webpack serve",
+    "stats": "webpack --json > stats.json && webpack-bundle-analyzer stats.json"
   },
   "keywords": [
     "react",
@@ -15,5 +17,33 @@
   "repository": {
     "type": "git",
     "url": "subtotal"
+  },
+  "dependencies": {
+    "materialize-css": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^9.0.1",
+    "cross-env": "^6.0.3",
+    "css-loader": "^3.4.2",
+    "file-loader": "^5.0.2",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.2",
+    "terser-webpack-plugin": "^2.3.2",
+    "webpack": "^5.44.0",
+    "webpack-bundle-analyzer": "^3.6.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^4.3.1"
   }
 }
