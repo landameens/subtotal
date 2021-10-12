@@ -114,7 +114,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.json', '.png', '.jsx'],
         alias: {
-            '@': path.resolve(__dirname, 'src'),
+            '@entities': path.resolve(__dirname, 'src/entities')
         }
     },
     optimization: optimization(),
