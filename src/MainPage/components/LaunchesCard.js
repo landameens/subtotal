@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import httpCaller from "@utils/httpCaller";
+import dateFormat from "dateformat";
 
 export const LaunchesCard = ({launch}) => {
     const [imgSrc, setImgSrc] = useState(null)
@@ -16,14 +17,17 @@ export const LaunchesCard = ({launch}) => {
                 <img className="activator responsive-img" src={imgSrc} alt="Изображение ракеты"/>
             </div>
             <div className="card-content">
-                    <span className="card-title activator grey-text text-darken-4">{launch.name}
-                        <i className="material-icons right">more_info</i>
+                    <span className="card-title activator grey-text text-darken-4">
+                        {launch.name}
                     </span>
-                <span>{launch.date_utc}</span>
+                <span>
+                    {dateFormat(launch.date_utc, "mmmm dS, yyyy")}
+                </span>
             </div>
             <div className="card-reveal">
-                    <span className="card-title grey-text text-darken-4">{launch.name}<i
-                        className="material-icons right">close</i></span>
+                    <span className="card-title grey-text text-darken-4">
+                        {launch.name}
+                    </span>
                 <p>{launch.details}</p>
             </div>
         </div>
