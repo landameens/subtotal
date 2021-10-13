@@ -18,7 +18,7 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 error: null,
-                launches: [...state.launches, action.payload]
+                launches: [...state.launches, ...action.payload.launches]
             }
         case GET_LAUNCHES_FAILURE:
             return {

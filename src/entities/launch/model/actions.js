@@ -5,7 +5,7 @@ export const getLaunchesSuccess = (launches) => {
     return {
         type: GET_LAUNCHES_SUCCESS,
         payload: {
-            ...launches
+            launches
         }
     }
 }

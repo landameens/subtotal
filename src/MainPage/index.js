@@ -1,15 +1,14 @@
-import React, {useEffect} from 'react'
-import {useDispatch, useSelector} from 'react-redux'
-import {launchModel} from "@entities/launch";
+import React from 'react'
+import {Launches} from './components/Launches'
+import {SortingButton} from "./components/SortingButton";
 
 export const MainPage = () => {
-    const launches = useSelector(launchModel.selectors.launches)
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-        dispatch(launchModel.thunks.getLaunches())
-    }, []);
-
-    console.log(launches)
-    return <p>Запуски</p>
+    return <div className="container">
+        <SortingButton/>
+        <div className="row">
+            <div className="col s6 m4">
+                <Launches/>
+            </div>
+        </div>
+    </div>
 }

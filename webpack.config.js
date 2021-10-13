@@ -104,9 +104,7 @@ const plugins = () => {
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
-    entry: {
-        main: './index.jsx',
-    },
+    entry: ['babel-polyfill', './index.jsx'],
     output: {
         filename: filename('js'),
         path: path.resolve(__dirname, 'dist')
@@ -114,7 +112,8 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.json', '.png', '.jsx'],
         alias: {
-            '@entities': path.resolve(__dirname, 'src/entities')
+            '@entities': path.resolve(__dirname, 'src/entities'),
+            '@utils': path.resolve(__dirname, 'src/utils')
         }
     },
     optimization: optimization(),

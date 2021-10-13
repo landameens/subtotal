@@ -22,11 +22,9 @@ export const getLaunches = () => {
                 }
             })
             .then(res => {
-                console.log("success")
-                dispatch(getLaunchesSuccess(res.data))
+                dispatch(getLaunchesSuccess(res.data.docs))
             })
             .catch(err => {
-                console.log('error')
                 dispatch(getLaunchesFailure(err.message))
             })
     }

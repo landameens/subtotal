@@ -1,7 +1,7 @@
 import {applyMiddleware, combineReducers, createStore} from 'redux'
-import {launchModel} from "./launch";
-import thunk from "redux-thunk";
-import logger  from "redux-logger";
+import {launchModel} from './launch'
+import thunk from 'redux-thunk'
+import logger  from 'redux-logger'
 
 
 
